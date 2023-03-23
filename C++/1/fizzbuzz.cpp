@@ -1,25 +1,25 @@
 #include<iostream>
+#include<stdio.h>
+#include<cstdlib>
 
 using namespace std;
 
-int main() {
+int fizzbuzz(int n) {
 
-int n = 1000;
+	int k = (n-1) / 3;
+	int l = (n-1) / 5;
+	int m = (n-1) / 15;
 
-int sum = 0;
+	return (3*k*(k+1) + 5 * l * (l+1) - 15*m*(m+1))/2;
 
-for (int i = 0; i<n ; i++) {
+}
 
-if (i % 5 == 0 || i % 3 == 0) {
+int main(int argc, char* argv[]) {
 
-sum += i;
+	int n = atoi(argv[1]);
+			
+	cout << fizzbuzz(n) << "\n";
 
-};
-
-};
-
-cout << sum << "\n";
-
-return 0;
+	return 0;
 
 }
